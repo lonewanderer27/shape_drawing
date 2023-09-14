@@ -116,7 +116,7 @@
 <body>
   <form method="get" style="padding: 10px 0px;" class="col s12">
     <div class="row">
-      <div class="input-field col s6" style="padding: 0px 10px">
+      <div class="input-field col s12 m6" style="padding: 0px 10px">
         <input type="number" name="line" value='<?php echo $line?>' />
         <label>DrawLine:</label>
         <div style="padding: 20px 10px">
@@ -124,7 +124,7 @@
         </div>
       </div>
 
-      <div class="input-field col s6" style="padding: 0px 10px">
+      <div class="input-field col s12 m6" style="padding: 0px 10px">
         <input type="number" name="stripedLine" value='<?php echo $stripedLine?>' />
         <label>DrawStripedLine:</label>
         <div style="padding: 20px 10px">
@@ -132,7 +132,7 @@
         </div>
       </div>
 
-      <div class="input-field col s6" style="padding: 0px 10px">
+      <div class="input-field col s12 m6" style="padding: 0px 10px">
         <input type="number" name="square" value='<?php echo $square?>' />
         <label>DrawSquare:</label>
         <div style="padding: 20px 10px">
@@ -140,7 +140,7 @@
         </div>
       </div>
 
-      <div class="input-field col s6" style="padding: 0px 10px">
+      <div class="input-field col s12 m6" style="padding: 0px 10px">
         <input type="number" name="parallelogram" value='<?php echo $parallelogram?>' />
         <label>DrawParallelogram:</label>
         <div style="padding: 20px 10px">
@@ -148,7 +148,7 @@
         </div>
       </div>
 
-      <div class="input-field col s6" style="padding: 0px 10px">
+      <div class="input-field col s12 m6" style="padding: 0px 10px">
         <input type="number" name="triangle" value='<?php echo $triangle?>' />
         <label>DrawTriangle:</label>
         <div style="padding: 20px 10px">
@@ -156,7 +156,7 @@
         </div>
       </div>
 
-      <div class="input-field col s6" style="padding: 0 10px">
+      <div class="input-field col s12 m6" style="padding: 0 10px">
         <input type="number" name="reverseTriangle" value='<?php echo $reverseTriangle?>' />
         <label>DrawReverse Triangle</label>
         <div style="padding: 20px 10px">
@@ -164,7 +164,7 @@
         </div>
       </div>
 
-      <div class="col s6" style="padding: 0 10px">
+      <div class="col s12 m6" style="padding: 0 10px">
         <button type="submit" class="btn">Draw</button>
       </div>
     </div>
