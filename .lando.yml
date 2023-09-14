@@ -1,0 +1,4 @@
+name: shape_drawing
+recipe: lamp
+config:
+  webroot: .
