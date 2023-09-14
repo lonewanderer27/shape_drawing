@@ -8,7 +8,6 @@
   $typeValid = false;
 
   // test if the type isn't number;
-  echo is_numeric($numberInput);
   if (is_numeric($numberInput) == true) {
     $typeValid = true;
   }
