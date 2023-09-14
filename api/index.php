@@ -5,6 +5,12 @@
 
   $numberInput = getValue("numberInput");
   $numberValid = false;
+  $typeValid = false;
+
+  // test if the type isn't number;
+  if (gettype($numberInput) == "string" && strlen($numberInput) > 0) {
+    $typeValid = true;
+  }
 
   // test if it's odd number
   if ($numberInput % 2 != 0 && $numberInput >= 3) {
@@ -126,10 +132,16 @@
           </p>
         <br/>
         <?php endif; ?>
+        <?php if($typeValid == false): ?>
+          <p style="margin-top: 10px">
+            Input is not a number / empty!
+          </p>
+        <br/>
+        <?php endif; ?>
         <button type="submit" class="btn" style="margin-top: 10px; margin-left: auto;">Draw</button>
       </div>
     </div>
-    <?php if($numberValid == true): ?>
+    <?php if($numberValid == true && $typeValid == true): ?>
       <div class="row">
         <div class="col s12 m6 l4" style="padding: 0px 10px">
           <h6>Line:</h6>
