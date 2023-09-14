@@ -138,48 +138,48 @@
           </p>
         <br/>
         <?php endif; ?>
-        <button type="submit" class="btn" style="margin-top: 10px; margin-left: auto;">Draw</button>
+        <button type="submit" class="btn" style="margin-top: 10px; margin-left: auto; font-weight: bold;">DRAW</button>
       </div>
     </div>
     <?php if($numberValid == true && $typeValid == true): ?>
       <div class="row">
         <div class="col s12 m6 l4" style="padding: 0px 10px">
-          <h6>Line:</h6>
+          <p style="font-weight: bold" class="bold">Line:</p style="font-weight: bold">
           <div style="padding: 20px 10px">
             <?php echo DrawLine($numberInput); ?>
           </div>
         </div>
 
         <div class="col s12 m6 l4" style="padding: 0px 10px">
-          <h6>StripedLine:</h6>
+          <p style="font-weight: bold">StripedLine:</p style="font-weight: bold">
           <div style="padding: 20px 10px">
             <?php echo DrawStripedLine($numberInput); ?>
           </div>
         </div>
 
         <div class="col s12 m6 l4" style="padding: 0px 10px">
-          <h6>Square:</h6>
+          <p style="font-weight: bold">Square:</p style="font-weight: bold">
           <div style="padding: 20px 10px">
             <?php echo DrawSquare($numberInput); ?>
           </div>
         </div>
 
         <div class="col s12 m6 l4" style="padding: 0px 10px">
-          <h6>Parallelogram:</h6>
+          <p style="font-weight: bold">Parallelogram:</p style="font-weight: bold">
           <div style="padding: 20px 10px">
             <?php echo DrawParallelogram($numberInput) ?>
           </div>
         </div>
 
         <div class="col s12 m6 l4" style="padding: 0px 10px">
-          <h6>Triangle:</h6>
+          <p style="font-weight: bold">Triangle:</p style="font-weight: bold">
           <div style="padding: 20px 10px">
             <?php echo DrawTriangle($numberInput) ?>
           </div>
         </div>
 
         <div class="col s12 m6 l4" style="padding: 0 10px">
-          <h6>Reverse Triangle</h6>
+          <p style="font-weight: bold">Reverse Triangle</p style="font-weight: bold">
           <div style="padding: 20px 10px">
             <?php echo DrawReverseTriangle($numberInput) ?>
           </div>
