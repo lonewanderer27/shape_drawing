@@ -118,7 +118,7 @@
     <div style="display: flex; justify-content: center; margin: 30px 0;">
       <div class="type_correct" style="padding: 0px 10px; width: 200px;">
         <label>Num Input:</label>
-        <input type="number" name="user_input" value='<?php echo $user_input?>' min="3" />
+        <input type="number" name="user_input" value='<?php echo $user_input?>' min="3" required />
         <button type="submit" style="margin-top: 5px">Draw</button>
         <?php if($user_input_correct == false): ?>
           <p style="margin-top: 10px">
