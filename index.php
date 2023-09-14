@@ -3,12 +3,13 @@
     return isset($_GET[$key]) ? $_GET[$key] : 5;
   }
 
-  $line = getValue("line");
-  $stripedLine = getValue("stripedLine");
-  $square = getValue("square");
-  $parallelogram = getValue("parallelogram");
-  $triangle = getValue("triangle");
-  $reverseTriangle = getValue("reverseTriangle");
+  $numberInput = getValue("numberInput");
+  $numberValid = false;
+
+  // test if it's odd number
+  if ($numberInput % 2 != 0 && $numberInput >= 3) {
+    $numberValid = true;
+  } 
 
   function DrawLine($number)
   {
@@ -114,60 +115,65 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@materializecss/materialize@2.0.2-alpha/dist/css/materialize.min.css">
 </head>
 <body>
-  <form method="get" style="padding: 10px 0px;" class="col s12">
-    <div class="row">
-      <div class="input-field col s12 m6" style="padding: 0px 10px">
-        <input type="number" name="line" value='<?php echo $line?>' />
-        <label>DrawLine:</label>
-        <div style="padding: 20px 10px">
-          <?php echo DrawLine($line); ?>
-        </div>
-      </div>
-
-      <div class="input-field col s12 m6" style="padding: 0px 10px">
-        <input type="number" name="stripedLine" value='<?php echo $stripedLine?>' />
-        <label>DrawStripedLine:</label>
-        <div style="padding: 20px 10px">
-          <?php echo DrawStripedLine($stripedLine); ?>
-        </div>
-      </div>
-
-      <div class="input-field col s12 m6" style="padding: 0px 10px">
-        <input type="number" name="square" value='<?php echo $square?>' />
-        <label>DrawSquare:</label>
-        <div style="padding: 20px 10px">
-          <?php echo DrawSquare($square); ?>
-        </div>
-      </div>
-
-      <div class="input-field col s12 m6" style="padding: 0px 10px">
-        <input type="number" name="parallelogram" value='<?php echo $parallelogram?>' />
-        <label>DrawParallelogram:</label>
-        <div style="padding: 20px 10px">
-          <?php echo DrawParallelogram($parallelogram) ?>
-        </div>
-      </div>
-
-      <div class="input-field col s12 m6" style="padding: 0px 10px">
-        <input type="number" name="triangle" value='<?php echo $triangle?>' />
-        <label>DrawTriangle:</label>
-        <div style="padding: 20px 10px">
-          <?php echo DrawTriangle($triangle) ?>
-        </div>
-      </div>
-
-      <div class="input-field col s12 m6" style="padding: 0 10px">
-        <input type="number" name="reverseTriangle" value='<?php echo $reverseTriangle?>' />
-        <label>DrawReverse Triangle</label>
-        <div style="padding: 20px 10px">
-          <?php echo DrawReverseTriangle($reverseTriangle) ?>
-        </div>
-      </div>
-
-      <div class="col s12 m6" style="padding: 0 10px">
-        <button type="submit" class="btn">Draw</button>
+  <form method="get" style="padding: 10px 0px; text-align: center;" class="col s12">
+    <div class="row" style="margin: 30px 0; display: flex; justify-content: center;">
+      <div class="input-field outlined" style="padding: 0px 10px; width: 200px;">
+        <input type="number" name="numberInput" value='<?php echo $numberInput?>' min="3" placeholder=" " class="validate" />
+        <label>Number:</label>
+        <?php if($numberValid == false): ?>
+          <p style="margin-top: 10px">
+            Number must be odd!
+          </p>
+        <br/>
+        <?php endif; ?>
+        <button type="submit" class="btn" style="margin-top: 10px; margin-left: auto;">Draw</button>
       </div>
     </div>
+    <?php if($numberValid == true): ?>
+      <div class="row">
+        <div class="col s12 m6 l4" style="padding: 0px 10px">
+          <h6>Line:</h6>
+          <div style="padding: 20px 10px">
+            <?php echo DrawLine($numberInput); ?>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l4" style="padding: 0px 10px">
+          <h6>StripedLine:</h6>
+          <div style="padding: 20px 10px">
+            <?php echo DrawStripedLine($numberInput); ?>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l4" style="padding: 0px 10px">
+          <h6>Square:</h6>
+          <div style="padding: 20px 10px">
+            <?php echo DrawSquare($numberInput); ?>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l4" style="padding: 0px 10px">
+          <h6>Parallelogram:</h6>
+          <div style="padding: 20px 10px">
+            <?php echo DrawParallelogram($numberInput) ?>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l4" style="padding: 0px 10px">
+          <h6>Triangle:</h6>
+          <div style="padding: 20px 10px">
+            <?php echo DrawTriangle($numberInput) ?>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l4" style="padding: 0 10px">
+          <h6>Reverse Triangle</h6>
+          <div style="padding: 20px 10px">
+            <?php echo DrawReverseTriangle($numberInput) ?>
+          </div>
+        </div>
+      </div>
+    <?php endif; ?>
   </form>
 </body>
 </html>
