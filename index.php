@@ -8,7 +8,8 @@
   $typeValid = false;
 
   // test if the type isn't number;
-  if (gettype($numberInput) == "string" && strlen($numberInput) > 0) {
+  echo is_numeric($numberInput);
+  if (is_numeric($numberInput) == true) {
     $typeValid = true;
   }
 
@@ -131,7 +132,7 @@
             Number must be odd!
           </p>
         <br/>
-        <?php endif; ?>
+        <?php endif;  ?>
         <?php if($typeValid == false): ?>
           <p style="margin-top: 10px">
             Input is not a number / empty!
